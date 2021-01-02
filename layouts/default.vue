@@ -109,7 +109,11 @@ export default class DefaultLayout extends Vue {
       this.items.forEach((item, i) => {
         const path = item.to.split('/')
         const routeName =
-          path[path.length - 1] !== '' ? path[path.length - 1] : 'index'
+          path[path.length - 1] !== ''
+            ? path[path.length - 1] !== this.getNextLanguage()
+              ? path[path.length - 1]
+              : 'index'
+            : 'index'
         if (this.$i18n.locale === this.$i18n.defaultLocale) {
           this.items[i].title = (this as any).$t(`menu.${routeName}`)
           this.items[i].to = '/' + path[path.length - 1]
