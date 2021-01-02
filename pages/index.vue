@@ -7,52 +7,18 @@
       </div>
       <v-card>
         <v-card-title class="headline">
-          Welcome to the {{ require('../package.json').appName }}
+          {{ $t('index.cardTitle') }} {{ require('../package.json').appName }}
         </v-card-title>
         <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
+          <p v-html="$t('index.cardText.p1')"></p>
+          <p v-html="$t('index.cardText.p2')"></p>
+          <p v-html="$t('index.cardText.p3')"></p>
+          <p v-html="$t('index.cardText.p4')"></p>
+          <p v-html="$t('index.cardText.p5')"></p>
           <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            <em>
+              <small>&mdash; {{ $t('index.cardText.p6') }}</small>
+            </em>
           </div>
           <hr class="my-3" />
           <a
@@ -60,7 +26,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Nuxt Documentation
+            {{ $t('index.nuxtDocumentation') }}
           </a>
           <br />
           <a
@@ -68,12 +34,14 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Nuxt GitHub
+            {{ $t('index.nuxtGitHub') }}
           </a>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
+          <v-btn color="primary" nuxt to="/inspire">
+            {{ $t('index.continue') }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
