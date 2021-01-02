@@ -20,5 +20,7 @@
   "inspire": {
     "message": "まず、問題を解決します。 次に、コードを記述します。",
     "from": "John Johnson"
-  }
+  },
+  "switchLanguage": "言語切替",
+  "switchTheme": "テーマ切替"
 }

@@ -44,6 +44,10 @@ selection)
 - Update page titles
   - index: `appName`
   - other: `pageTitle - appName`
+- Add tooltips.
+  - Menu items
+  - Language switch
+  - Theme switch
 
 ## Build Setup
 

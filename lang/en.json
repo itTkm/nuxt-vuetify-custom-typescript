@@ -20,5 +20,7 @@
   "inspire": {
     "message": "First, solve the problem. Then, write the code.",
     "from": "John Johnson"
-  }
+  },
+  "switchLanguage": "Switch language",
+  "switchTheme": "Switch theme"
 }
