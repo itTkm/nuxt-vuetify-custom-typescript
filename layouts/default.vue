@@ -136,14 +136,14 @@ export default class DefaultLayout extends Vue {
 
   getLanguage(): string {
     const language = localStorage.getItem('lang')
-    return language !== null ? language : 'ja'
+    return language !== null ? language : 'en'
   }
 
   getNextLanguage(): string {
-    if (this.lang === '' || this.lang === 'ja') {
-      return 'en'
-    } else {
+    if (this.lang === '' || this.lang === 'en') {
       return 'ja'
+    } else {
+      return 'en'
     }
   }
 }
