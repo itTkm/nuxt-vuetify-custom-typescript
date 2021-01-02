@@ -1,6 +1,8 @@
 {
   "name": "nuxt-vuetify-custom-typescript",
-  "version": "1.0.0",
+  "appName": "Vuetify + Nuxt.js + Typescript template (Customized)",
+  "version": "0.0.1",
+  "author": "itTkm",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
