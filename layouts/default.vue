@@ -25,7 +25,17 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon
+        @click.stop="
+          if (drawer) {
+            drawer = !miniVariant ? !miniVariant : miniVariant
+            miniVariant = !miniVariant
+          } else {
+            drawer = !drawer
+            miniVariant = false
+          }
+        "
+      />
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar>
@@ -50,10 +60,10 @@ export default class DefaultLayout extends Vue {
   title = require('../package.json').appName
   version = require('../package.json').version
   author = require('../package.json').author
-  clipped = false
-  drawer = false
+  clipped = true
+  drawer = null
   fixed = false
-  miniVariant = false
+  miniVariant = true
   items = [
     {
       icon: 'mdi-apps',
