@@ -13,7 +13,7 @@
           :key="i"
           :to="item.to"
           router
-          exact
+          :exact="item.exact"
         >
           <v-tooltip right>
             <template v-slot:activator="{ on, attrs }">
@@ -54,7 +54,7 @@
             <v-icon>mdi-translate</v-icon>
           </v-btn>
         </template>
-        <span>{{ this.$t('switchLanguage') }}</span>
+        <span>{{ $t('switchLanguage') }}</span>
       </v-tooltip>
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
@@ -62,7 +62,7 @@
             <v-icon>mdi-invert-colors</v-icon>
           </v-btn>
         </template>
-        <span>{{ this.$t('switchTheme') }}</span>
+        <span>{{ $t('switchTheme') }}</span>
       </v-tooltip>
     </v-app-bar>
     <v-main>
@@ -101,11 +101,13 @@ export default class DefaultLayout extends Vue {
       icon: 'mdi-apps',
       title: (this as any).$t('menu.index'),
       to: (this as any).localePath('index', (this as any).$i18n.locale),
+      exact: true, // If root page, it should be "true".
     },
     {
       icon: 'mdi-chart-bubble',
       title: (this as any).$t('menu.inspire'),
       to: (this as any).localePath('inspire', (this as any).$i18n.locale),
+      exact: false, // If the page has child pages (e.g. /inspire/edit), it should be "false".
     },
   ]
 
