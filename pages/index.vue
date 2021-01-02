@@ -59,5 +59,13 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
     VuetifyLogo,
   },
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  head() {
+    return {
+      // Page title is "appName"
+      titleTemplate: '',
+      title: require('../package.json').appName,
+    }
+  }
+}
 </script>
