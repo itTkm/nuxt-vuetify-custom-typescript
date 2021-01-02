@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -38,6 +38,9 @@
       />
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn icon @click="invertColors">
+        <v-icon>mdi-invert-colors</v-icon>
+      </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
@@ -60,6 +63,7 @@ export default class DefaultLayout extends Vue {
   title = require('../package.json').appName
   version = require('../package.json').version
   author = require('../package.json').author
+  dark = this.isDark()
   clipped = true
   drawer = null
   fixed = false
@@ -76,5 +80,21 @@ export default class DefaultLayout extends Vue {
       to: '/inspire',
     },
   ]
+
+  mounted() {
+    this.$vuetify.theme.dark = this.isDark()
+  }
+
+  invertColors() {
+    this.dark = !this.dark
+    this.$vuetify.theme.dark = this.dark
+    localStorage.setItem('dark', this.dark.toString())
+  }
+
+  isDark() {
+    return localStorage.getItem('dark') !== null
+      ? localStorage.getItem('dark') === 'true'
+      : true
+  }
 }
 </script>
