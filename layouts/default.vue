@@ -14,6 +14,7 @@
           :to="item.to"
           router
           :exact="item.exact"
+          color="primary"
         >
           <v-tooltip right>
             <template v-slot:activator="{ on, attrs }">
@@ -29,7 +30,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app dark color="primary">
       <v-app-bar-nav-icon
         @click.stop="
           if (drawer) {
