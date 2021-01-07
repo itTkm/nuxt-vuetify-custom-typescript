@@ -1,17 +1,22 @@
-name: ci
+name: CI/CD Workflow
 
 on:
   push:
     branches:
       - main
       - master
+      - 'feature/*'
+    paths-ignore:
+      - '**.md'
   pull_request:
     branches:
       - main
       - master
+    paths-ignore:
+      - '**.md'
 
 jobs:
-  ci:
+  CI:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -47,5 +52,34 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
+      - name: Build and Generate
+        run: yarn generate
+
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Archive Production Artifact 📦
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
+
+  # CD:
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+  #   needs: CI
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Checkout 🛎
+  #       uses: actions/checkout@master
+
+  #     - name: Download Artifact 📦
+  #       uses: actions/download-artifact@master
+  #       with:
+  #         name: dist
+  #         path: dist
+
+  #     # Please configure this step for your deployment
+  #     - name: Deploy to Any hosting service
+  #       run: YOUR DEPLOYMENT COMMANDS
