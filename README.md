@@ -49,6 +49,9 @@ selection)
   - Menu items
   - Language switch
   - Theme switch
+- Apply custom loading globally.
+  - Spinner (Indeterminate)
+  - Progress circular
 
 ## Build Setup
 

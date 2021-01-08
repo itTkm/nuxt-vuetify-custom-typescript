@@ -95,6 +95,9 @@ export default {
     },
   },
 
+  // Custom loading configuration (https://ja.nuxtjs.org/docs/2.x/features/loading/)
+  loading: '~/components/loading.vue',
+
   // nuxt-i18n configuration (https://i18n.nuxtjs.org/)
   i18n: {
     locales: [
