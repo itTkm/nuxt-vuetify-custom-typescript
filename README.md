@@ -1,5 +1,9 @@
 # Vuetify + Nuxt.js + Typescript template (Customized)
 
+## Live Demo
+
+- [CodeSandbox](https://codesandbox.io/embed/github/itTkm/nuxt-vuetify-custom-typescript/tree/master/?fontsize=14&hidenavigation=1&theme=dark&view=preview)
+
 ## Overview
 
 This project was customized from [initial template](https://github.com/nuxt/create-nuxt-app/tree/master/packages/cna-template/template/frameworks/vuetify) that created with below settings.
