@@ -22,7 +22,7 @@ export default class Inspire extends Vue {
   head() {
     return {
       // Page title is "title - appName"
-      title: 'Inspire',
+      title: (this as any).$t('menu.inspire'),
     }
   }
 }
