@@ -1,4 +1,5 @@
 {
+  "appName": "Vuetify + Nuxt.js + Typescript template (Customized)",
   "menu": {
     "index": "Welcome",
     "inspire": "Inspire"

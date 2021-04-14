@@ -42,7 +42,7 @@
           }
         "
       />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="$t('appName')" />
       <v-spacer />
       <v-tooltip bottom>
         <template v-slot:activator="{ on, attrs }">
@@ -174,6 +174,13 @@ export default class DefaultLayout extends Vue {
       return 'ja'
     } else {
       return 'en'
+    }
+  }
+
+  head(): object {
+    return {
+      // Page title is "title - appName"
+      titleTemplate: '%s - ' + (this as any).$t('appName'),
     }
   }
 }

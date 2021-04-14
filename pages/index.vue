@@ -133,7 +133,7 @@ export default class Index extends Vue {
     return {
       // Page title is "appName"
       titleTemplate: '',
-      title: require('../package.json').appName,
+      title: (this as any).$t('appName'),
     }
   }
 }
