@@ -72,7 +72,7 @@
       </v-container>
     </v-main>
     <v-footer :absolute="!fixed" inset app>
-      <span>&copy; {{ new Date().getFullYear() }} {{ author }}</span>
+      <span>&copy; {{ copyright(2020) }}</span>
       <v-spacer />
       <span>v{{ version }}</span>
     </v-footer>
@@ -175,6 +175,12 @@ export default class DefaultLayout extends Vue {
     } else {
       return 'en'
     }
+  }
+
+  copyright(since: number): string {
+    const until = new Date().getFullYear()
+    if (since < until) return `${since}-${until} ${this.author}`
+    else return `${since} ${this.author}`
   }
 
   head(): object {

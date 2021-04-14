@@ -52,6 +52,9 @@ selection)
 - Apply custom loading globally.
   - Spinner (Indeterminate)
   - Progress circular
+- Automatically update the footer copyright years.
+  - At release year: `2020`
+  - At next year or later: `2020-2021`
 
 ## Build Setup
 
